@@ -39,4 +39,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Added this to avoid this error: Web Console is activated in the test environment, which is
+  # usually a mistake. To ensure it's only activated in development
+  # mode, move it to the development group of your Gemfile:
+  #
+  #     gem 'web-console', group: :development
+  #
+  # If you still want to run it the test environment (and know
+  # what you are doing), put this in your Rails application
+  # configuration:
+  #
+  #     config.web_console.development_only = false
+  config.web_console.development_only = false
 end
